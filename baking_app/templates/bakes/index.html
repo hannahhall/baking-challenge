@@ -1,0 +1,76 @@
+{% extends 'wrapper.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="columns is-multiline">
+    <div class="column is-full">
+      <form action="{% url 'bake-list' %}" method="get">
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <p class="control is-expanded has-icons-left">
+                <input class="input" name="name" type="text" placeholder="Search by name...">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-cookie-bite"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control is-expanded">
+                <div class="select is-fullwidth">
+                <select name="category" id="bake-type">
+                  <option value="0">Search by category...</option>
+                  {% for category in categories %}
+                  <option value="{{category.id}}">{{category.label}}</option>
+                  {% endfor %}
+                </select>
+                </div>
+              </p>
+            </div>
+            <div class="field is-grouped is-flex-grow-0">
+              <p class="control">
+                <button type="submit" class="button is-primary">Search</button>
+              </p>
+              <p class="control">
+                <a href="{% url 'bake-list' %}" class="button">Clear filters</a>
+              </p>
+            </div>
+          </div>
+          
+        </div>
+
+        
+        
+    </div>
+    </form>
+  </div>
+  {% if bakes_list|length %}
+  {% for bake in bakes_list %}
+  <div class="column is-one-quarter">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{bake.hero_img}}" alt="Placeholder image">
+        </figure>
+      </div>
+      <header class="card-header">
+        <p class="card-header-title">
+          <a href="/{{bake.id}}">{{bake.title}}</a>
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          {{bake.description}}
+          <br>
+          <time datetime="{{bake.date}}">{{bake.date}}</time>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p>Check back soon</p>
+{% endif %}
+</div>
+{% endblock %}

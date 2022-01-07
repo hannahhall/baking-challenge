@@ -1,0 +1,47 @@
+{% extends 'wrapper.html' %}
+{% block title %}{{bake.title}}{% endblock title %}
+
+{% block navbar %}
+<section class="hero is-warning mb-3">
+  <div class="hero-head">
+    {% include 'detail-navbar.html' %}
+  </div>
+  <div class="hero-body">
+    <div class="container">
+      <p class="subtitle">
+        {{bake.description}}
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock navbar %}
+
+{% block content %}
+<section class="container">
+  {% for step in bake.step_set.all %}
+    <article class="media">
+      <div class="media-left is-hidden-touch">
+        <div id="carousel-{{forloop.counter}}" class="carousel is-clipped" style="height:240px; width:320px;">
+      {% for image in step.images_set.all %}
+        <figure class="image is-4by3" >
+          <img src="{{image.jpg_url}}">
+        </figure>
+        
+        {% endfor %}
+      </div>
+      </div>
+      <div class="media-content mx-2">
+        <div class="content">
+          <p>{{step.text}}</p>
+        </div>
+    </article>
+    {% endfor %}
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+<script>
+  const carousels = [...document.getElementsByClassName('carousel')]
+  carousels.forEach(carousel => {
+    bulmaCarousel.attach(`#${carousel.id}`);
+  })
+</script>
+{% endblock content %}
