@@ -7,22 +7,24 @@
     {% include 'detail-navbar.html' %}
   </div>
   <div class="hero-body">
-    <div class="container">
-      <p class="subtitle">
-        {{bake.description}}
-      </p>
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <p class="subtitle">
+          {{bake.description}}
+        </p>
+      </div>
     </div>
   </div>
 </section>
 {% endblock navbar %}
 
 {% block content %}
-<section class="container">
+<section class="container px-4">
   {% for step in bake.step_set.all %}
     <article class="media">
       <div class="media-left is-hidden-touch">
         <div id="carousel-{{forloop.counter}}" class="carousel is-clipped" style="height:240px; width:320px;">
-      {% for image in step.images_set.all %}
+      {% for image in step.image_set.all %}
         <figure class="image is-4by3" >
           <img src="{{image.jpg_url}}">
         </figure>
@@ -32,10 +34,10 @@
       </div>
       <div class="media-content mx-2">
         <div class="content">
-          <p>{{step.text}}</p>
+          <p>{{step.position}}. {{step.text}}</p>
         </div>
     </article>
-    {% endfor %}
+  {% endfor %}
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
 <script>

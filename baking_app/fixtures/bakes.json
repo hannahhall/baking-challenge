@@ -1,0 +1,157 @@
+[
+  {
+    "model": "baking_app.bake",
+    "pk": 1,
+    "fields": {
+      "recipe_url": "https://www.kingarthurbaking.com/recipes/bakers-croissants-recipe",
+      "date": "2021-12-29",
+      "description": "F yeah croissants",
+      "title": "Croissants",
+      "category": 1,
+      "success": true
+    }
+  },
+  {
+    "model": "baking_app.bake",
+    "pk": 2,
+    "fields": {
+      "recipe_url": "https://www.kingarthurbaking.com/recipes/basque-style-cheesecake-tarta-de-queso-recipe",
+      "date": "2022-01-07",
+      "description": "It's a crustless cheesecake with a gooey center. I don't think I've ever made a cheesecake before so this was a first. I had to substitute butter and milk for the heavy cream but it still turned out all right. It wasn't as dark on top though. If I make it again, I'd like to add some vanilla extract. The taste was good but a little plain",
+      "title": "Tarta de Queso",
+      "category": 1,
+      "success": true
+    }
+  },
+  {
+    "model": "baking_app.category",
+    "pk": 1,
+    "fields": {
+      "label": "Pastry"
+    }
+  },
+  {
+    "model": "baking_app.category",
+    "pk": 2,
+    "fields": {
+      "label": "Cake"
+    }
+  },
+  {
+    "model": "baking_app.image",
+    "pk": 1,
+    "fields": {
+      "step": 1,
+      "image": "image/upload/v1640751009/pvxisossnbx4ee3fmhzf.heic",
+      "is_hero": true
+    }
+  },
+  {
+    "model": "baking_app.image",
+    "pk": 2,
+    "fields": {
+      "step": 1,
+      "image": "image/upload/v1641161717/o2lzcxwruzievxoxcdvl.heic",
+      "is_hero": false
+    }
+  },
+  {
+    "model": "baking_app.image",
+    "pk": 3,
+    "fields": {
+      "step": 2,
+      "image": "image/upload/v1641161735/o8nazztlqacv0vv3baru.heic",
+      "is_hero": false
+    }
+  },
+  {
+    "model": "baking_app.image",
+    "pk": 4,
+    "fields": {
+      "step": 3,
+      "image": "image/upload/v1641581487/t9veaauptxlxfjavzi3x.heic",
+      "is_hero": false
+    }
+  },
+  {
+    "model": "baking_app.image",
+    "pk": 5,
+    "fields": {
+      "step": 3,
+      "image": "image/upload/v1641581516/imu6u6nr5m31uux8lh5z.heic",
+      "is_hero": false
+    }
+  },
+  {
+    "model": "baking_app.image",
+    "pk": 6,
+    "fields": {
+      "step": 4,
+      "image": "image/upload/v1641581534/njv37tw17ss1nwbzpe7u.heic",
+      "is_hero": false
+    }
+  },
+  {
+    "model": "baking_app.image",
+    "pk": 7,
+    "fields": {
+      "step": 4,
+      "image": "image/upload/v1641581555/uc2aoywdankpl5t2rij8.heic",
+      "is_hero": false
+    }
+  },
+  {
+    "model": "baking_app.image",
+    "pk": 8,
+    "fields": {
+      "step": 5,
+      "image": "image/upload/v1641581585/zdprhe3hazr686mowxnv.heic",
+      "is_hero": true
+    }
+  },
+  {
+    "model": "baking_app.step",
+    "pk": 1,
+    "fields": {
+      "bake": 1,
+      "text": "Fin",
+      "position": 1
+    }
+  },
+  {
+    "model": "baking_app.step",
+    "pk": 2,
+    "fields": {
+      "bake": 1,
+      "text": "step 2",
+      "position": 2
+    }
+  },
+  {
+    "model": "baking_app.step",
+    "pk": 3,
+    "fields": {
+      "bake": 2,
+      "text": "Mixed everything together slowly. Added cream cheese in 1inch blocks. Had to pull out the blender to get rid of the cream cheese chunks.",
+      "position": 1
+    }
+  },
+  {
+    "model": "baking_app.step",
+    "pk": 4,
+    "fields": {
+      "bake": 2,
+      "text": "Started with 25 minutes. Top was still very pale at the end of it. Added 6 more minutes and pulled it out when the thermometer hit the right temp even though it wasn't as dark as the recipe called for.",
+      "position": 2
+    }
+  },
+  {
+    "model": "baking_app.step",
+    "pk": 5,
+    "fields": {
+      "bake": 2,
+      "text": "Finished. Let it get to room temp before slicing in. Center was still creamy and top had a nice carmelized taste to it",
+      "position": 3
+    }
+  }
+]

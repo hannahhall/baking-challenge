@@ -43,11 +43,11 @@
         
     </div>
     </form>
-  </div>
+  
   {% if bakes_list|length %}
   {% for bake in bakes_list %}
-  <div class="column is-one-quarter">
-    <div class="card">
+  <div class="column is-one-third">
+    <div class="card" style="height: 100%">
       <div class="card-image">
         <figure class="image is-4by3">
           <img src="{{bake.hero_img}}" alt="Placeholder image">
@@ -60,7 +60,7 @@
       </header>
       <div class="card-content">
         <div class="content">
-          {{bake.description}}
+          {{bake.description|truncatechars:100}}
           <br>
           <time datetime="{{bake.date}}">{{bake.date}}</time>
         </div>
@@ -74,3 +74,4 @@
 {% endif %}
 </div>
 {% endblock %}
+</div>

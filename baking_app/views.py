@@ -1,11 +1,10 @@
-from django.shortcuts import render
 from django.views import generic
-from django.db.models import Q
 
 from baking_app.models import Bake, Category
 
 
 class IndexView(generic.ListView):
+    """The index view shows a list of all bakes"""
     template_name = 'bakes/index.html'
     context_object_name = 'bakes_list'
 
@@ -24,11 +23,14 @@ class IndexView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         context['category_count'] = len(context['categories'])
-        context['successes_count'] = context['bakes_list'].filter(success=True).count()
-        context['failures_count'] = context['bakes_list'].filter(success=False).count()
+        context['successes_count'] = context['bakes_list'].filter(
+            success=True).count()
+        context['failures_count'] = context['bakes_list'].filter(
+            success=False).count()
         return context
 
 
 class DetailView(generic.DetailView):
+    """Detail view shows a single bake"""
     model = Bake
     template_name = 'bakes/detail.html'
