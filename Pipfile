@@ -11,6 +11,8 @@ pylint-django = "*"
 pillow = "*"
 cloudinary = "*"
 fontawesomefree = "*"
+gunicorn = "*"
+django-on-heroku = "*"
 
 [dev-packages]
 
